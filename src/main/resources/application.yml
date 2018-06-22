@@ -1,0 +1,21 @@
+server:
+  port: 8760
+
+spring:
+  application:
+    name: gateway
+    
+zuul:
+  routes:
+    helloms:
+      path: /helloms/**
+      serviceId: helloms
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10    
+      
